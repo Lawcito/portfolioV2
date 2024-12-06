@@ -1,0 +1,13 @@
+
+/* Diapositivas laterales */
+.swiper-slide-prev img {
+  transform: scale(0.4);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.swiper-slide-next img {
+  transform: scale(0.8);
+  opacity: 1;
+  transition: all 0.5s ease;
+}
