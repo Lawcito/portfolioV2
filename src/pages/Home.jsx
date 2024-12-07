@@ -51,12 +51,45 @@ const contactLinks = [
       </svg>
     ),
   },
+  {
+    url: "https://wa.link/chd5p4",
+    name: "Whatssap",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="currentColor"
+        className="bi bi-whatsapp transition-transform transform hover:scale-110 duration-200"
+        viewBox="0 0 16 16"
+      >
+        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+      </svg>
+    ),
+  },
+  {
+    url: "mailto:emiraleconegrete@gmail.com",
+    name: "Mail me",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="currentColor"
+        className="bi bi-envelope-arrow-up transition-transform transform hover:scale-110 duration-200"
+        viewBox="0 0 16 16"
+      >
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4.5a.5.5 0 0 1-1 0V5.383l-7 4.2-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h5.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-1.99zm1 7.105 4.708-2.897L1 5.383zM1 4v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1" />
+        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016" />
+      </svg>
+    ),
+  },
 ];
 
 function Home() {
   return (
-    <div className="h-screen w-full flex items-center">
-      <div className="w-1/2 flex flex-col justify-start border-l ml-10 gap-4">
+    <div className="h-screen w-full flex flex-col lg:flex-row items-center justify-center gap-28">
+      <div className="lg:w-1/2 flex flex-col lg:justify-start border-l lg:ml-10 gap-4">
         {/* TypeWriter with a Welcome text */}
         <div className="text-xl ml-5">
           <TypewriterComponent
@@ -74,17 +107,21 @@ function Home() {
         <ul className="w-1/3 flex flex-grow ml-5 gap-4">
           {contactLinks.map(({ url, name, svg }, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="relative group">
                 <a href={url} target="_blank" className="hover:text-[#72B01D]">
                   {svg}
                 </a>
+                <span className="absolute top-full mt-2 hidden w-max px-2 py-1 text-sm text-[#72B01D] bg-[#454955] rounded-md group-hover:block">
+                  {name}
+                </span>
               </li>
             );
           })}
         </ul>
       </div>
-      <div className="flex flex-col justify-center items-center w-1/2 mr-10">
-        <div className="flex">
+      <div className="flex flex-col justify-center items-center lg:w-1/2 lg:mr-10 m-2">
+        <div className="flex flex-col items-center gap-2">
+          <p className="text-xl">Random fruit generator</p>
           <OnePiece />
         </div>
       </div>

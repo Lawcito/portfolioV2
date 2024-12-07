@@ -46,8 +46,7 @@ export const pages = [
     img: calculator,
     href: "https://lawcito.github.io/calculator/",
     title: "Calculator",
-    description:
-      "Calculator created in the CFL 404 web programming course",
+    description: "Calculator created in the CFL 404 web programming course",
   },
 ];
 
@@ -55,8 +54,8 @@ function Works() {
   const [currentWork, setCurrentWork] = useState(undefined);
 
   return (
-    <div className="h-full flex items-center justify-evenly">
-      <div className="w-1/3 h-1/2 rounded-lg">
+    <div className="h-full flex flex-col lg:flex-row justify-center items-center lg:justify-evenly gap-8 lg:gap-0">
+      <div className="lg:w-1/3  lg:h-1/2 rounded-lg w-full">
         <Swiper
           modules={[Autoplay, Navigation, Pagination, A11y, EffectCube]}
           effect="cube"
@@ -75,12 +74,7 @@ function Works() {
             shadowOffset: 0.1,
             shadowScale: 0.94,
           }}
-          className="h-full w-full"
-          onAutoplayStart={() => console.log("Autoplay started")}
-          onAutoplayStop={() => console.log("Autoplay stopped")}
-          onSlideChange={() => console.log("Slide changed")}
-          onAutoplayPause={() => console.log("Autoplay paused")}
-          onAutoplayResume={() => console.log("Autoplay resumed")}
+          className="lg:h-full lg:w-full"
         >
           {pages.map((page, index) => {
             return (
@@ -109,14 +103,14 @@ function Works() {
           })}
         </Swiper>
       </div>
-      <div className="h-1/2 w-1/2">
+      <div className="lg:h-1/2 lg:w-1/2 h-1/4">
         {currentWork ? (
-          <div className="flex flex-col gap-8">
-            <span className="text-2xl text-[#72B01D]">{currentWork.title}</span>
-            <div className="h-full w-full border-l">
+          <div className="flex flex-col gap-8 items-center lg:items-start">
+            <span className="lg:text-2xl text-xl text-[#72B01D]">{currentWork.title}</span>
+            <div className="h-full w-full lg:border-l">
               <p className="ml-5">{currentWork.description}</p>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-evenly w-full">
               <a
                 href={currentWork.colabLink}
                 className="flex flex-row gap-2 hover:text-[#72B01D] transition-transform transform hover:scale-110 duration-200 "
@@ -130,7 +124,7 @@ function Works() {
                 target="blank_"
                 className="flex flex-row gap-2 text-[#3F7D20]"
               >
-                <p>Ir al sitio web</p>
+                <p>Go to website</p>
                 <span className="animate-pulse">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

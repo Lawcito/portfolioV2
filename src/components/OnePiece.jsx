@@ -37,10 +37,10 @@ function OnePiece() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-1/2">
+    <div className="flex justify-center items-center lg:h-1/2">
       {randomFruit ? (
-        <div className="flex flex-row gap-8 bg-[#0D0A0B] rounded-lg h-48 shadow-sm shadow-[#F3EFF5]">
-          <div className="flex flex-col w-full h-full gap-4 items-center justify-center ">
+        <div className="flex flex-row gap-8 bg-[#0D0A0B] rounded-lg lg:h-48 shadow-sm shadow-[#F3EFF5]">
+          <div className="flex flex-col lg:w-full lg:h-full gap-4 lg:items-center lg:justify-center m-2 lg:m-0">
             <p className="text-[#72B01D]">{randomFruit.name}</p>
             <img
               src={randomFruit.img}
@@ -48,7 +48,7 @@ function OnePiece() {
               className="w-32 h-32 rounded-lg shadow-md mb-1"
             />
           </div>
-          <div className="overflow-y-auto w-full max-h-48 flex flex-col text-[#F3EFF5]">
+          <div className="overflow-y-auto lg:w-full w-1/2 max-h-48 flex flex-col text-[#F3EFF5]">
             <p className="text-md">{randomFruit.desc}</p>
           </div>
         </div>
