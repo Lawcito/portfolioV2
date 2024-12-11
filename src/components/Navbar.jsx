@@ -17,7 +17,7 @@ function Navbar() {
     <nav className="lg:w-1/3 h-10 lg:flex lg:justify-center items-center lg:bg-[#F3EFF5] lg:mt-5 rounded-lg z-50 text-[#0D0A0B]">
       {/* Hamburguesa para mobile */}
       <button
-        className="lg:hidden flex place-self-end place-items-center mt-5 mr-5 "
+        className="lg:hidden flex place-self-end place-items-center mt-5 mr-5 mb-5"
         onClick={() => setIsOpen(!isOpen)}
       >
         {!isOpen ? (

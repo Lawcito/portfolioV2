@@ -12,5 +12,5 @@ export default {
       },
     },
   },
-  plugins: [require("flyonui"), require("flyonui/plugin")],
+  plugins: [],
 };
